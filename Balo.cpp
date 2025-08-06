@@ -51,11 +51,7 @@ int main()
     for (int i = 1 ; i <= iN ; i++)
         cin >> vecW[i] >> vecV[i];
     vector<vector<int>> vecDP(iN + 1, vector<int>(iW + 1, 0));
-    /*
-        vecDP[i][j]: Giá trị lớn nhất của túi khi lựa chọn các vật 1,2,...i và có trọng lượng j
-        vecDP[i][j] = vecDP[i - 1][j]: Nếu không lựa vật i vào túi
-        vecDP[i][j] = max(vecDP[i][j], vecV[i] + vecDP[i - 1][j - vecW[i]]): Nếu lựa chọn vật i vào túi
-    */
+    
     solveProblem(iN, iW, vecW, vecV, vecDP);
     printResult(iN, iW, vecW, vecV, vecDP);
     return 0;
